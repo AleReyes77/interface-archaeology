@@ -1,0 +1,227 @@
+.page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s-6);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+.main {
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: var(--s-12) var(--s-6) var(--s-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-10);
+}
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.title {
+  font-size: var(--text-3xl);
+  letter-spacing: var(--tracking-display);
+  max-width: 22ch;
+}
+.lede {
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.sources {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--r-3);
+  background: var(--surface);
+}
+.source {
+  padding: var(--s-5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.source + .source {
+  border-top: 1px solid var(--line);
+}
+.sourceTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--text-md);
+}
+.sourceTitle svg {
+  color: var(--ink-3);
+}
+.sourceText {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+.row {
+  display: flex;
+  gap: var(--s-2);
+  margin-top: 6px;
+}
+.error {
+  font-size: var(--text-sm);
+  color: var(--error);
+}
+.recent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.recentTitle {
+  font-size: var(--text-md);
+}
+.projectList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto auto auto;
+  align-items: center;
+  gap: var(--s-4);
+  padding: var(--s-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+.projectMain {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 0;
+  padding: 4px 0;
+}
+.projectMain:hover .projectName {
+  color: var(--accent);
+}
+.projectName {
+  font-weight: 500;
+}
+.projectPath {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.projectStatus {
+  font-size: var(--text-xs);
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.projectStatus[data-status="failed"] {
+  color: var(--error);
+}
+.projectStatus[data-status="running"] {
+  color: var(--accent);
+}
+.projectStats {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-4);
+  white-space: nowrap;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(8 9 11 / 0.55);
+  display: grid;
+  place-items: center;
+  z-index: var(--z-palette);
+}
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  height: min(520px, calc(100dvh - 64px));
+  display: flex;
+  flex-direction: column;
+  background: var(--raised);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-4);
+  box-shadow: var(--shadow-pop);
+  overflow: hidden;
+}
+.dialogHead,
+.dialogFoot {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-2) var(--s-3);
+}
+.dialogHead {
+  border-bottom: 1px solid var(--line);
+}
+.dialogFoot {
+  border-top: 1px solid var(--line);
+}
+.dialogPath {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  direction: rtl;
+  text-align: left;
+}
+.badge {
+  font-size: var(--text-2xs);
+  color: var(--accent);
+  border: 1px solid var(--accent-line);
+  border-radius: 10px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+.dirList {
+  flex: 1;
+  overflow: auto;
+  padding: var(--s-2);
+}
+.dir {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  height: 28px;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-2);
+  font-size: var(--text-sm);
+  text-align: left;
+}
+.dir svg {
+  color: var(--ink-3);
+}
+.dir:hover {
+  background: var(--overlay);
+}
+
+@media (max-width: 720px) {
+  .row {
+    flex-wrap: wrap;
+  }
+  .project {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .projectStatus,
+  .projectStats {
+    display: none;
+  }
+}

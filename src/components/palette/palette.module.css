@@ -1,0 +1,129 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-palette);
+  background: rgb(8 9 11 / 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 12vh;
+  animation: fade var(--dur-2) var(--ease);
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+.dialog {
+  width: min(640px, calc(100vw - 32px));
+  max-height: 64vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--raised);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-4);
+  box-shadow: var(--shadow-pop);
+  overflow: hidden;
+  animation: rise var(--dur-2) var(--ease);
+}
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.985);
+  }
+}
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 0 var(--s-4);
+  height: 52px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-3);
+}
+.input {
+  flex: 1;
+  height: 100%;
+  background: none;
+  border: 0;
+  outline: none;
+  font-size: var(--text-lg);
+  color: var(--ink);
+}
+.input::placeholder {
+  color: var(--ink-4);
+}
+.results {
+  flex: 1;
+  overflow: auto;
+  padding: var(--s-2);
+}
+.empty {
+  padding: var(--s-6) var(--s-4);
+  color: var(--ink-3);
+  font-size: var(--text-sm);
+}
+.group + .group {
+  margin-top: var(--s-2);
+}
+.groupTitle {
+  padding: 4px var(--s-2);
+  font-size: var(--text-2xs);
+  color: var(--ink-4);
+  font-weight: 500;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  height: 34px;
+  padding: 0 var(--s-2);
+  border-radius: var(--r-2);
+  cursor: pointer;
+  min-width: 0;
+}
+.option[aria-selected="true"] {
+  background: var(--overlay);
+}
+.optionIcon {
+  width: 14px;
+  display: grid;
+  place-items: center;
+  color: var(--ink-3);
+  flex: none;
+}
+.optionTitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.optionTitle[data-plain] {
+  font-family: var(--font-sans);
+}
+.optionSub {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--ink-4);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.enter {
+  color: var(--ink-3);
+  flex: none;
+}
+.footer {
+  display: flex;
+  gap: var(--s-4);
+  align-items: center;
+  padding: 8px var(--s-4);
+  border-top: 1px solid var(--line);
+  font-size: var(--text-2xs);
+  color: var(--ink-3);
+}
+.footerCount {
+  margin-left: auto;
+}

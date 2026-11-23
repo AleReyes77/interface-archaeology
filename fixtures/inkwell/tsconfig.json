@@ -1,0 +1,12 @@
+{
+  // Fixture project for Interface Archaeology. Comments are allowed here, as in real tsconfig files.
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "preserve",
+    "strict": true,
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

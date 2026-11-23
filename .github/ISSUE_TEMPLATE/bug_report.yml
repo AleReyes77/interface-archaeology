@@ -1,0 +1,34 @@
+name: Bug report
+description: Something is wrong in the analysis or the interface
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Analysis (missing, wrong or invented relationship)
+        - Interface
+        - Project import
+        - Export
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: For analysis bugs, include a minimal code sample that reproduces it.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      placeholder: "Interface Archaeology 0.1.0, Node 24, Windows 11, Chrome 131"

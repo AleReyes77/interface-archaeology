@@ -4,6 +4,9 @@
 
 **Understand the code beneath the interface.**
 
+[![CI](https://github.com/AleReyes77/interface-archaeology/actions/workflows/ci.yml/badge.svg)](https://github.com/AleReyes77/interface-archaeology/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/github/license/AleReyes77/interface-archaeology)](LICENSE)
+
 An interactive tool for uncovering the architecture, behaviour, data flow, dependencies and change impact of unfamiliar React and Next.js applications, built on static analysis you can verify line by line.
 
 </div>
